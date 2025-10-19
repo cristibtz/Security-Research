@@ -3,7 +3,7 @@
 ## CVE LINK: 
 
 ## Description:
-The patient prescription viewing functionality in his_doc_view_single_patient.php of rickxy Hospital Management System version 1.0 contains an SQL injection vulnerability. The pres_pat_number GET parameter is directly concatenated into SQL queries without proper sanitization, allowing authenticated attackers (doctor role) to execute arbitrary SQL queries. This vulnerability enables complete database compromise and exposure of sensitive medical data including patient records, prescriptions, and administrative credentials.
+The patient prescription viewing functionality in his_doc_view_single_patient.php of rickxy Hospital Management System version 1.0 contains an SQL injection vulnerability. The pat_number GET parameter is directly concatenated into SQL queries without proper sanitization, allowing authenticated attackers (doctor role) to execute arbitrary SQL queries. This vulnerability enables complete database compromise and exposure of sensitive medical data including patient records, prescriptions, and administrative credentials.
 
 ## Impact:
 - Complete database compromise through SQL injection
@@ -28,7 +28,7 @@ The patient prescription viewing functionality in his_doc_view_single_patient.ph
 - **Affected Version:** 1.0
 - **Affected Component:** his_doc_view_single_patient.php (Doctor Module)
 - **Impact:** Complete Database Compromise
-- **Parameter:** pres_pat_number (GET parameter)
+- **Parameter:** pat_number (GET parameter)
 
 ## Affected Products:
 - rickxy Hospital Management System: https://github.com/rickxy/Hospital-Management-System
@@ -42,7 +42,7 @@ https://github.com/rickxy/Hospital-Management-System
 1. Authenticate as doctor user in HMS application
 2. Navigate to patient prescription viewing page
 3. Capture request to his_doc_view_single_patient.php
-4. Execute SQL injection via pres_pat_number parameter:
+4. Execute SQL injection via pat_number parameter:
 
 **Time-based injection:**
 ```
